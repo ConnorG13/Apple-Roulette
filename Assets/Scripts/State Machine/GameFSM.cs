@@ -8,7 +8,7 @@ public class GameFSM : StateMachineMB
     private GameController _controller;
 
     //variables
-    //public GameSetupState SetupState { get; private set; }
+    public GameSetupState SetupState { get; private set; }
     //public GamePlayState PlayState { get; private set; }
     
 
@@ -16,7 +16,7 @@ public class GameFSM : StateMachineMB
     {
         _controller = GetComponent<GameController>();
         //instantiate
-        //SetupState = new GameSetupState(this, _controller);
+        SetupState = new GameSetupState(this, _controller);
         //PlayState = new GamePlayState(this, _controller);
     }
 
