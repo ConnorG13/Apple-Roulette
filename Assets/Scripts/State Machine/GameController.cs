@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    /*
-    [Header("Game Data")]
-    [SerializeField] private float _tapLimitDuration = 2.5f;
+    //[Header("Game Data")]
+    //[SerializeField] private float _tapLimitDuration = 2.5f;
 
+    /*
     [Header("Dependencies")]
     [SerializeField] private Unit _playerUnitPrefab;
     [SerializeField] private Transform _playerUnitSpawn;
