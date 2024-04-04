@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+
     //[Header("Game Data")]
     //[SerializeField] private float _tapLimitDuration = 2.5f;
 
