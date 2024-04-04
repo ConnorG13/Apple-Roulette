@@ -4,33 +4,39 @@ using UnityEngine;
 
 public class AppleManager : MonoBehaviour
 {
+    [SerializeField] private int _maxApples = 6;
+    [SerializeField] private int _poisonApples = 1;
+    private int _currentApple = 0;
     private int _poolLength;
     private int _poisonCount;
     private int[] _Apples;
     
     void Start()
     {
-
+        //on game start, immediately make a pool
         CreatePool();
     }
-
     public void CreatePool()
     {
-        _poolLength = Mathf.RoundToInt(Random.Range(4f, 8f));
-        _poisonCount = Mathf.RoundToInt(Random.Range(1f, (_poolLength - 2)));
+        //variables setting max apples + poison apples
+        _poolLength = _maxApples;
+        _poisonCount = _poisonApples;
+        //create new pool of 6 apples
         _Apples = new int[_poolLength];
 
+        //make the first apple poisoned
         for (int t = 0; t < _poisonCount; t++)
         {
             _Apples[t] = 1;
         }
 
+        //every other apple is normal
         for (int t = _poisonCount; t < _Apples.Length; t++)
         {
             _Apples[t] = 0;
         }
 
-
+        //shuffle
         for (int t = 0; t < _Apples.Length; t++)
         {
             int hold = _Apples[t];
@@ -39,10 +45,63 @@ public class AppleManager : MonoBehaviour
             _Apples[r] = hold;
         }
 
-
+        //debug command, comment out later
         foreach (int t in _Apples)
         {
             Debug.Log(t.ToString());
+        }
+    }
+    public void ShufflePool()
+    {
+        //shuffle all apples that haven't been bitten yet (index X and onwards in array)
+        for (int t = _currentApple; t < _Apples.Length; t++)
+        {
+            int hold = _Apples[t];
+            int r = Random.Range(t, _Apples.Length);
+            _Apples[t] = _Apples[r];
+            _Apples[r] = hold;
+        }
+    }
+    public void PullApple()
+    {
+        //if the apple is safe...
+        if (_Apples[_currentApple] == 0)
+        {
+            //do X
+            Debug.Log("Safe!");
+        }
+        else
+        {
+            //otherwise, the apple is poisoned and do Y
+            Debug.Log("Poisoned!");
+        }
+
+        //move on to the next index value
+        _currentApple++;
+        //then check to see if there are any apples left
+        CheckPoolFinished();
+    }
+    public void SeeNextApple()
+    {
+        //effectively the same as pulling an apple...
+        //but without moving to the next index
+        if (_Apples[_currentApple] == 0)
+        {
+            Debug.Log("This next apple is safe!");
+        }
+        else
+        {
+            Debug.Log("This next apple is poisoned!");
+        }
+    }
+    private void CheckPoolFinished()
+    {
+        //if we're at the end of the index
+        if (_currentApple >= _maxApples)
+        {
+            //make a new pool and set the index check back to 0
+            CreatePool();
+            _currentApple = 0;
         }
     }
 }
