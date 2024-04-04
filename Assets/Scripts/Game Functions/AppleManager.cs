@@ -30,7 +30,17 @@ public class AppleManager : MonoBehaviour
             _Apples[t] = 0;
         }
 
-        foreach(int t in _Apples)
+
+        for (int t = 0; t < _Apples.Length; t++)
+        {
+            int hold = _Apples[t];
+            int r = Random.Range(t, _Apples.Length);
+            _Apples[t] = _Apples[r];
+            _Apples[r] = hold;
+        }
+
+
+        foreach (int t in _Apples)
         {
             Debug.Log(t.ToString());
         }
