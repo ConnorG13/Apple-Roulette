@@ -68,6 +68,7 @@ public class AppleManager : MonoBehaviour
         }
 
         _currentApple++;
+        CheckPoolFinished();
     }
     public void SeeNextApple()
     {
@@ -78,6 +79,14 @@ public class AppleManager : MonoBehaviour
         else
         {
             Debug.Log("This next apple is poisoned!");
+        }
+    }
+    private void CheckPoolFinished()
+    {
+        if (_currentApple >= _maxApples)
+        {
+            CreatePool();
+            _currentApple = 0;
         }
     }
 }
