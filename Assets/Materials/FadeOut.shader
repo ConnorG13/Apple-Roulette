@@ -60,7 +60,8 @@ Shader "Unlit/LoadingScreen"
                     _MainColor.w -= howMuchFade;
                 #endif
 
-                _MainColor.w = saturate(_MainColor.w);
+                _MainColor.w = frac(_MainColor.w);
+     
       
                 _MainColor.w *= (1 - (length(i.uv) * 1/(_MainColor.w)));
 
