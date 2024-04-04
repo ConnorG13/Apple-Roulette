@@ -60,13 +60,24 @@ public class AppleManager : MonoBehaviour
     {
         if (_Apples[_currentApple] == 0)
         {
-            //0 = safe
+            Debug.Log("Safe!");
         }
         else
         {
-            //1 = poison
+            Debug.Log("Poisoned!");
         }
 
         _currentApple++;
+    }
+    public void SeeNextApple()
+    {
+        if (_Apples[_currentApple] == 0)
+        {
+            Debug.Log("This next apple is safe!");
+        }
+        else
+        {
+            Debug.Log("This next apple is poisoned!");
+        }
     }
 }
