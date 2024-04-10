@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GameController : MonoBehaviour
 {
 
-    public GameObject player1;
-    public GameObject player2;
-    public GameObject player3;
-    public GameObject player4;
+    public GameObject _player1;
+    public GameObject _player2;
+    public GameObject _player3;
+    public GameObject _player4;
+    public AppleManager _appleManager;
+    public GameObject _currentPlayer;
+    public TextMeshProUGUI _gameInfo;
 
+    public int _roundStartCoins;
+    public int _startingHearts;
     //[Header("Game Data")]
     //[SerializeField] private float _tapLimitDuration = 2.5f;
 
