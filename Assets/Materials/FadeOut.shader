@@ -1,4 +1,4 @@
-Shader "Unlit/LoadingScreen"
+Shader "Unlit/FadeOut"
 {
     Properties
     {
