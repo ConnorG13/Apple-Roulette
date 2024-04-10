@@ -9,21 +9,31 @@ public class GameFSM : StateMachineMB
 
     //variables
     public GameSetupState SetupState { get; private set; }
-    //public GamePlayState PlayState { get; private set; }
-    
+    public PlayerMainState MainState { get; private set; }
+    public PlayerTransitionState TransitionState { get; private set; }
+    public RoundStartState StartState { get; private set; }
+    public RoundEndState EndState { get; private set; }
+    public BiteState BiteState { get; private set; }
+    public ShopState ShopState { get; private set; }
+
 
     private void Awake()
     {
         _controller = GetComponent<GameController>();
         //instantiate
         SetupState = new GameSetupState(this, _controller);
-        //PlayState = new GamePlayState(this, _controller);
+        MainState = new PlayerMainState(this, _controller);
+        TransitionState = new PlayerTransitionState(this, _controller);
+        StartState = new RoundStartState(this, _controller);
+        EndState = new RoundEndState(this, _controller);
+        BiteState = new BiteState(this, _controller);
+        ShopState = new ShopState(this, _controller);
     }
 
     private void Start()
     {
-        /*
+        
         ChangeState(SetupState);
-        */
+        
     }
 }
