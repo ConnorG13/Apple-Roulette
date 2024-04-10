@@ -23,7 +23,7 @@ public class RoundStartState : State
     {
         base.Exit();
 
-        Debug.Log("END: Round End");
+        Debug.Log("END: Round Start");
     }
 
     public override void FixedTick()
