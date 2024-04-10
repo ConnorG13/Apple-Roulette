@@ -337,11 +337,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124955705}
   m_CullTransparentMesh: 1
---- !u!1 &176721454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3423281953672348344, guid: 1db02d64e39b05d4b8459eac9848f984, type: 3}
-  m_PrefabInstance: {fileID: 1789415176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &204403521 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3423281953672348345, guid: 1db02d64e39b05d4b8459eac9848f984, type: 3}
@@ -502,11 +497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313593616}
   m_CullTransparentMesh: 1
---- !u!1 &330906494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3423281953672348344, guid: 1db02d64e39b05d4b8459eac9848f984, type: 3}
-  m_PrefabInstance: {fileID: 351836720}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &337997532 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3423281953672348345, guid: 1db02d64e39b05d4b8459eac9848f984, type: 3}
@@ -1544,11 +1534,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687051371}
   m_CullTransparentMesh: 1
---- !u!1 &689367683 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3423281953672348344, guid: 1db02d64e39b05d4b8459eac9848f984, type: 3}
-  m_PrefabInstance: {fileID: 1477871242}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &876950448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,10 +4507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254b39128a735624fa13a6faa69fa859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player1: {fileID: 1715957058}
-  _player2: {fileID: 689367683}
-  _player3: {fileID: 176721454}
-  _player4: {fileID: 330906494}
+  _players: []
   _appleManager: {fileID: 457591922}
   _currentPlayer: {fileID: 1715957058}
   _gameInfo: {fileID: 1134901411}
