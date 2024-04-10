@@ -81,17 +81,17 @@ public class AppleManager : MonoBehaviour
         //then check to see if there are any apples left
         CheckPoolFinished();
     }
-    public void SeeNextApple()
+    public string SeeNextApple()
     {
         //effectively the same as pulling an apple...
         //but without moving to the next index
         if (_Apples[_currentApple] == 0)
         {
-            Debug.Log("This next apple is safe!");
+            return "This next apple is safe!";
         }
         else
         {
-            Debug.Log("This next apple is poisoned!");
+            return "This next apple is poisoned!";
         }
     }
     private void CheckPoolFinished()
