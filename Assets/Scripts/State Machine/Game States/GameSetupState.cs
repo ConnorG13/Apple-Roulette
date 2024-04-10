@@ -18,7 +18,6 @@ public class GameSetupState : State
         base.Enter();
 
         Debug.Log("STATE: Setup");
-
     }
 
     public override void Exit()
@@ -35,6 +34,7 @@ public class GameSetupState : State
 
     public override void Tick()
     {
+        _stateMachine.ChangeState(_stateMachine.StartState);
         base.Tick();
     }
 }

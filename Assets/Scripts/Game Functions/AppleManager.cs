@@ -16,9 +16,6 @@ public class AppleManager : MonoBehaviour
 
     void Start()
     {
-        //on game start, immediately make a pool
-        CreatePool();
-
         _controller = GameObject.FindObjectOfType<GameController>();
     }
     public void CreatePool()
@@ -99,12 +96,15 @@ public class AppleManager : MonoBehaviour
             return "This next apple is poisoned!";
         }
     }
-    public void CheckPoolFinished()
+    public bool CheckPoolFinished()
     {
         //if we're at the end of the index
         if (_currentApple >= _maxApples)
         {
-           
+            return true;
+        } else
+        {
+            return false;
         }
 
     }

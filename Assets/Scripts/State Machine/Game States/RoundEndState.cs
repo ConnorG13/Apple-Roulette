@@ -19,8 +19,6 @@ public class RoundEndState : State
 
         Debug.Log("STATE: Round End");
 
-        _stateMachine.ChangeState(_stateMachine.StartState);
-
     }
 
     public override void Exit()
@@ -37,6 +35,7 @@ public class RoundEndState : State
 
     public override void Tick()
     {
+        _stateMachine.ChangeState(_stateMachine.StartState);
         base.Tick();
     }
 }
