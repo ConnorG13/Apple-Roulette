@@ -10,11 +10,13 @@ public class GameController : MonoBehaviour
     public GameObject player3;
     public GameObject player4;
 
-    //[Header("Game Data")]
-    //[SerializeField] private float _tapLimitDuration = 2.5f;
-
     /*
     [Header("Dependencies")]
+    [SerializeField] private AppleManager _appleManager;
+
+    public AppleManager AppleManager => _appleManager;
+
+
     [SerializeField] private Unit _playerUnitPrefab;
     [SerializeField] private Transform _playerUnitSpawn;
     [SerializeField] private UnitSpawner _unitSpawner;
