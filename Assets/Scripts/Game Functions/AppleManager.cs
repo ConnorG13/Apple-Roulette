@@ -11,7 +11,7 @@ public class AppleManager : MonoBehaviour
     private int _poisonCount;
     private int[] _Apples;
 
-    private PlayerInfo _currentPlayer;
+    //private PlayerInfo _currentPlayer;
     private GameController _controller;
 
     void Start()
@@ -66,7 +66,7 @@ public class AppleManager : MonoBehaviour
     }
     public void PullApple()
     {
-        _currentPlayer = _controller._currentPlayer.GetComponent<PlayerInfo>();
+        //_currentPlayer = _controller._currentPlayer.GetComponent<PlayerInfo>();
         //if the apple is safe...
         if (_Apples[_currentApple] == 0)
         {
@@ -75,7 +75,7 @@ public class AppleManager : MonoBehaviour
         }
         else
         {
-            _currentPlayer.hearts--;
+            //_currentPlayer.hearts--;
             Debug.Log("Poisoned!");
         }
 
