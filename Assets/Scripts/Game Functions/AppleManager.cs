@@ -79,7 +79,6 @@ public class AppleManager : MonoBehaviour
         //move on to the next index value
         _currentApple++;
         //then check to see if there are any apples left
-        CheckPoolFinished();
     }
     public string SeeNextApple()
     {
@@ -94,14 +93,13 @@ public class AppleManager : MonoBehaviour
             return "This next apple is poisoned!";
         }
     }
-    private void CheckPoolFinished()
+    public void CheckPoolFinished()
     {
         //if we're at the end of the index
         if (_currentApple >= _maxApples)
         {
-            //make a new pool and set the index check back to 0
-            CreatePool();
-            _currentApple = 0;
+           
         }
+
     }
 }

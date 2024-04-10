@@ -16,8 +16,10 @@ public class RoundStartState : State
     public override void Enter()
     {
         base.Enter();
-
         Debug.Log("STATE: Round Start");
+
+        _controller._appleManager.CreatePool();
+        _stateMachine.ChangeState(_stateMachine.MainState);
 
     }
 

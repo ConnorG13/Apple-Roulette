@@ -16,9 +16,10 @@ public class BiteState : State
     public override void Enter()
     {
         base.Enter();
-
         Debug.Log("STATE: Bite");
 
+        _controller._appleManager.PullApple();
+        _stateMachine.ChangeState(_stateMachine.TransitionState);
     }
 
     public override void Exit()
