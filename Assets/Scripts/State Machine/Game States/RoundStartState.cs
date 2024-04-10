@@ -16,16 +16,14 @@ public class RoundStartState : State
     public override void Enter()
     {
         base.Enter();
-
         Debug.Log("STATE: Round Start");
-
     }
 
     public override void Exit()
     {
         base.Exit();
 
-        Debug.Log("END: Round End");
+        Debug.Log("END: Round Start");
     }
 
     public override void FixedTick()
@@ -35,6 +33,8 @@ public class RoundStartState : State
 
     public override void Tick()
     {
+        _controller._appleManager.CreatePool();
+        _stateMachine.ChangeState(_stateMachine.MainState);
         base.Tick();
     }
 }

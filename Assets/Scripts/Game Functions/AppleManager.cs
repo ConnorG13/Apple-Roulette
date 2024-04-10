@@ -10,11 +10,13 @@ public class AppleManager : MonoBehaviour
     private int _poolLength;
     private int _poisonCount;
     private int[] _Apples;
-    
+
+    //private PlayerInfo _currentPlayer;
+    private GameController _controller;
+
     void Start()
     {
-        //on game start, immediately make a pool
-        CreatePool();
+        _controller = GameObject.FindObjectOfType<GameController>();
     }
     public void CreatePool()
     {
@@ -64,6 +66,7 @@ public class AppleManager : MonoBehaviour
     }
     public void PullApple()
     {
+        //_currentPlayer = _controller._currentPlayer.GetComponent<PlayerInfo>();
         //if the apple is safe...
         if (_Apples[_currentApple] == 0)
         {
@@ -72,14 +75,13 @@ public class AppleManager : MonoBehaviour
         }
         else
         {
-            //otherwise, the apple is poisoned and do Y
+            //_currentPlayer.hearts--;
             Debug.Log("Poisoned!");
         }
 
         //move on to the next index value
         _currentApple++;
         //then check to see if there are any apples left
-        CheckPoolFinished();
     }
     public string SeeNextApple()
     {
@@ -94,14 +96,16 @@ public class AppleManager : MonoBehaviour
             return "This next apple is poisoned!";
         }
     }
-    private void CheckPoolFinished()
+    public bool CheckPoolFinished()
     {
         //if we're at the end of the index
         if (_currentApple >= _maxApples)
         {
-            //make a new pool and set the index check back to 0
-            CreatePool();
-            _currentApple = 0;
+            return true;
+        } else
+        {
+            return false;
         }
+
     }
 }

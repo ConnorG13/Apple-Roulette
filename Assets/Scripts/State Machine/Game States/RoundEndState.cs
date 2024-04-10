@@ -35,6 +35,7 @@ public class RoundEndState : State
 
     public override void Tick()
     {
+        _stateMachine.ChangeState(_stateMachine.StartState);
         base.Tick();
     }
 }
