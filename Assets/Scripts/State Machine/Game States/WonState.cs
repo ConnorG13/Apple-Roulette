@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-public class PlayerMainState : State
+
+public class WonState : State
 {
     private GameFSM _stateMachine;
     private GameController _controller;
 
-    public PlayerMainState(GameFSM stateMachine, GameController controller)
+    public WonState(GameFSM stateMachine, GameController controller)
     {
         _stateMachine = stateMachine;
         _controller = controller;
@@ -16,16 +16,16 @@ public class PlayerMainState : State
     public override void Enter()
     {
         base.Enter();
-        _controller.biteButton.GetComponent<Button>().enabled = true;
-        Debug.Log("STATE: Player Main");
+
+        Debug.Log("STATE: Won");
 
     }
 
     public override void Exit()
     {
         base.Exit();
-        _controller.biteButton.GetComponent<Button>().enabled = false;
-        Debug.Log("END: Player Main");
+
+        Debug.Log("END: Won");
     }
 
     public override void FixedTick()

@@ -5,28 +5,41 @@ using TMPro;
 public class GameController : MonoBehaviour
 {
 
-    public GameObject [] _players;
+    public List<GameObject> _players =  new List<GameObject>();
 
     public AppleManager _appleManager;
-    public GameObject _currentPlayer;
+    public PlayerInfo _currentPlayer;
     private int _playerTurn =  0;
     public TextMeshProUGUI _gameInfo;
 
     public int _roundStartCoins;
     public int _startingHearts;
 
+    public GameObject biteButton;
+    public GameObject ShopObj;
+
 
     private void Start()
     {
-        _currentPlayer = _players[_playerTurn];
+        _currentPlayer = _players[_playerTurn].GetComponent<PlayerInfo>();
     }
     public void switchPlayerTurn()
     {
         _playerTurn += 1;
-        
+        if(_playerTurn > _players.Count-1)
+        {
+            _playerTurn = 0;
+        }
+
 
     }
 
+    public void killPlayer()
+    {
+        Debug.Log("Killing Player");
+        _players.RemoveAt(_playerTurn);
+        _playerTurn -= 1;
+    }
     /*
     [Header("Dependencies")]
     [SerializeField] private AppleManager _appleManager;

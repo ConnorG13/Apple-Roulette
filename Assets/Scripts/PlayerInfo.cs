@@ -7,9 +7,11 @@ public class PlayerInfo : MonoBehaviour
 
     public int coins;
     public int hearts;
+    public string name;
     public TextMeshProUGUI heartsText;
     public TextMeshProUGUI coinsText;
     public GameController gameController;
+    public bool isAlive = true;
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,5 +29,10 @@ public class PlayerInfo : MonoBehaviour
     {
         heartsText.text = ":" + hearts.ToString();
         coinsText.text = ":" + coins.ToString();
+
+        if(hearts <= 0)
+        {
+            isAlive = false;
+        }
     }
 }

@@ -16,8 +16,18 @@ public class PlayerTransitionState : State
     public override void Enter()
     {
         base.Enter();
+        if(_controller._currentPlayer.hearts <= 0)
+        {
+            _controller.killPlayer();
+        }else{
+            _controller.switchPlayerTurn();
+        }
 
-        Debug.Log("STATE: Player Transition");
+        if (_controller._players.Count == 1)
+        {
+            _stateMachine.ChangeState(_stateMachine.WonState);
+        }
+        else if()
 
     }
 

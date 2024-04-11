@@ -15,6 +15,7 @@ public class GameFSM : StateMachineMB
     public RoundEndState EndState { get; private set; }
     public BiteState BiteState { get; private set; }
     public ShopState ShopState { get; private set; }
+    public WonState WonState { get; private set; }
 
 
     private void Awake()
@@ -28,6 +29,7 @@ public class GameFSM : StateMachineMB
         EndState = new RoundEndState(this, _controller);
         BiteState = new BiteState(this, _controller);
         ShopState = new ShopState(this, _controller);
+        WonState = new WonState(this, _controller);
     }
 
     private void Start()
