@@ -7,7 +7,7 @@ public class AppleManager : MonoBehaviour
 {
     [SerializeField] private int _maxApples = 6;
     [SerializeField] private int _poisonApples = 1;
-    private int _currentApple = 0;
+    public int _currentApple = 0;
     private int _poolLength;
     private int _poisonCount;
     private int[] _Apples;
