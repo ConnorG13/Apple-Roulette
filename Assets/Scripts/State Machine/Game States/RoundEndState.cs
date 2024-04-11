@@ -32,16 +32,17 @@ public class RoundEndState : State
 
     public override void FixedTick()
     {
+        if (_controller._TransitionToNextRound)
+        {
+            _controller._appleManager._currentApple = 0;
+            _stateMachine.ChangeState(_stateMachine.StartState);
+        }
+
         base.FixedTick();
     }
 
     public override void Tick()
     { 
         base.Tick();
-
-        if (_controller._TransitionToNextRound)
-        {
-            _stateMachine.ChangeState(_stateMachine.StartState);
-        }
     }
 }
