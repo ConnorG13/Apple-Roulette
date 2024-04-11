@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class WonState : State
 {
     private GameFSM _stateMachine;
@@ -16,7 +16,7 @@ public class WonState : State
     public override void Enter()
     {
         base.Enter();
-
+        _controller._WinnerPanel.SetActive(true);
         Debug.Log("STATE: Won");
 
     }
@@ -30,6 +30,10 @@ public class WonState : State
 
     public override void FixedTick()
     {
+        if (StateDuration > 6)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         base.FixedTick();
     }
 
