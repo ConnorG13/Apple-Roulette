@@ -49,11 +49,6 @@ public class AppleManager : MonoBehaviour
             _Apples[r] = hold;
         }
 
-        //debug command, comment out later
-        foreach (int t in _Apples)
-        {
-            Debug.Log(t.ToString());
-        }
     }
     public void ShufflePool()
     {
