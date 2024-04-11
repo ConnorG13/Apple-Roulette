@@ -28,6 +28,7 @@ public class PlayerMainState : State
     {
         base.Exit();
         _controller.biteButton.enabled = false;
+        _controller._ShopObj.SetActive(false);
         Debug.Log("END: Player Main");
     }
 
