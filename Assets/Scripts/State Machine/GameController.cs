@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     public GameObject _NextRoundButton;
     public bool _TransitionToNextRound = false;
 
+    public GameObject _WinnerPanel;
 
     private void Start()
     {
