@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AppleManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class AppleManager : MonoBehaviour
     private int _poolLength;
     private int _poisonCount;
     private int[] _Apples;
+    public bool _hasBiten = false;
 
     //private PlayerInfo _currentPlayer;
     private GameController _controller;
@@ -70,18 +72,19 @@ public class AppleManager : MonoBehaviour
         //if the apple is safe...
         if (_Apples[_currentApple] == 0)
         {
-            //do X
-            Debug.Log("Safe!");
+            _controller._gameInfo.text = "That was a Safe Apple!";
         }
         else
         {
-            //_currentPlayer.hearts--;
-            Debug.Log("Poisoned!");
+            _controller._gameInfo.text = "That was a Posioned Apple! OH NO";
+            _controller._currentPlayer.hearts -= 1;
+            
         }
 
         //move on to the next index value
         _currentApple++;
         //then check to see if there are any apples left
+        _hasBiten = true;
     }
     public string SeeNextApple()
     {

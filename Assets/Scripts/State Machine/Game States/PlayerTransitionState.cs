@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class PlayerTransitionState : State
 {
     private GameFSM _stateMachine;
@@ -16,31 +16,49 @@ public class PlayerTransitionState : State
     public override void Enter()
     {
         base.Enter();
-        if(_controller._currentPlayer.hearts <= 0)
+        Debug.Log("STATE: Transition State");
+        if (_controller._currentPlayer.hearts <= 0)
         {
             _controller.killPlayer();
-        }else{
+            Debug.Log("kill player");
+        }
+        else
+        {
             _controller.switchPlayerTurn();
+            Debug.Log("swap player in states");
         }
 
-        if (_controller._players.Count == 1)
-        {
-            _stateMachine.ChangeState(_stateMachine.WonState);
-        }
-        else if()
+        _controller._PlayerTurnStatus.text = "Pass the Phone to " + _controller._currentPlayer.name;
+
+        _controller._NextTurnButton.SetActive(true);
+
 
     }
 
     public override void Exit()
     {
         base.Exit();
-
+        _controller._NextTurnButton.SetActive(false);
+        _controller._TransitionToNextTurn = false;
         Debug.Log("END: Player Transition");
     }
 
     public override void FixedTick()
     {
-        base.FixedTick();
+
+        if (_controller._TransitionToNextTurn)
+        {
+            if (_controller._players.Count == 1)
+            {
+                _stateMachine.ChangeState(_stateMachine.WonState);
+            }else if (_controller._appleManager.CheckPoolFinished())
+            {
+                _stateMachine.ChangeState(_stateMachine.EndState);
+            }
+
+            _stateMachine.ChangeState(_stateMachine.MainState);
+        }
+        
     }
 
     public override void Tick()

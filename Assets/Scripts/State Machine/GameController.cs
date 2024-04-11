@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class GameController : MonoBehaviour
 {
@@ -15,8 +16,15 @@ public class GameController : MonoBehaviour
     public int _roundStartCoins;
     public int _startingHearts;
 
-    public GameObject biteButton;
-    public GameObject ShopObj;
+    public Button biteButton;
+    public GameObject _ShopObj;
+    public TextMeshProUGUI _PlayerTurnStatus;
+
+    public GameObject _NextTurnButton;
+    public bool _TransitionToNextTurn = false;
+
+    public GameObject _NextRoundButton;
+    public bool _TransitionToNextRound = false;
 
 
     private void Start()
@@ -30,7 +38,7 @@ public class GameController : MonoBehaviour
         {
             _playerTurn = 0;
         }
-
+        _currentPlayer = _players[_playerTurn].GetComponent<PlayerInfo>();
 
     }
 
@@ -39,6 +47,16 @@ public class GameController : MonoBehaviour
         Debug.Log("Killing Player");
         _players.RemoveAt(_playerTurn);
         _playerTurn -= 1;
+        switchPlayerTurn();
+    }
+
+    public void NextTurnPressed()
+    {
+        _TransitionToNextTurn = true;
+    }
+    public void NextRoundPressed()
+    {
+        _TransitionToNextRound = true;
     }
     /*
     [Header("Dependencies")]

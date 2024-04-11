@@ -16,15 +16,17 @@ public class RoundEndState : State
     public override void Enter()
     {
         base.Enter();
-
+        _controller._PlayerTurnStatus.text = "Start the Next Round?";
         Debug.Log("STATE: Round End");
+        _controller._NextRoundButton.SetActive(true);
 
     }
 
     public override void Exit()
     {
         base.Exit();
-
+        _controller._TransitionToNextRound = false;
+        _controller._NextRoundButton.SetActive(false);
         Debug.Log("END: Round End");
     }
 
@@ -35,7 +37,11 @@ public class RoundEndState : State
 
     public override void Tick()
     {
-        _stateMachine.ChangeState(_stateMachine.StartState);
+        if (_controller._TransitionToNextRound)
+        {
+            _stateMachine.ChangeState(_stateMachine.StartState);
+        }
+        
         base.Tick();
     }
 }
