@@ -10,18 +10,21 @@ public class PlayerInfo : MonoBehaviour
     public string name;
     public TextMeshProUGUI heartsText;
     public TextMeshProUGUI coinsText;
-    public GameController gameController;
+    private GameController gameController;
+    public GameObject skull;
     public bool isAlive = true;
     // Start is called before the first frame update
     void Awake()
     {
         gameController = GameObject.FindObjectOfType<GameController>();
+
         
     }
     private void Start()
     {
         coins = gameController._roundStartCoins;
         hearts = gameController._startingHearts;
+        skull.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class PlayerInfo : MonoBehaviour
         if(hearts <= 0)
         {
             isAlive = false;
+            skull.SetActive(true);
         }
     }
 }
