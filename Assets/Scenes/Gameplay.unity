@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 313593619}
   - component: {fileID: 313593618}
   m_Layer: 5
-  m_Name: Shuffle (4)
+  m_Name: Skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2339,7 +2339,7 @@ RectTransform:
   m_GameObject: {fileID: 1241458641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4054087, y: 1.1591, z: 1.1591}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2138969305}
@@ -2347,11 +2347,11 @@ RectTransform:
   - {fileID: 1872839333}
   - {fileID: 313593617}
   m_Father: {fileID: 1350808276}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: 0}
+  m_AnchoredPosition: {x: -325, y: 56}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1241458643
@@ -2723,7 +2723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3179e2948f905ff49bdeb5548db1f8b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameController: {fileID: 2114112935}
   _appleManager: {fileID: 457591922}
   ShuffleCost: 2
   CheckCost: 1
@@ -2917,12 +2916,12 @@ RectTransform:
   - {fileID: 585852086}
   - {fileID: 1838154479}
   - {fileID: 337997532}
-  - {fileID: 1241458642}
   - {fileID: 1476449715}
   - {fileID: 1519909166}
   - {fileID: 1740573545}
   - {fileID: 1595330988}
   - {fileID: 1441150882}
+  - {fileID: 1241458642}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3040,7 +3039,7 @@ RectTransform:
   m_Children:
   - {fileID: 747972325}
   m_Father: {fileID: 1350808276}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3174,7 +3173,7 @@ RectTransform:
   m_Children:
   - {fileID: 876950449}
   m_Father: {fileID: 1350808276}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3426,7 +3425,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1350808276}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -3728,7 +3727,7 @@ RectTransform:
   m_Children:
   - {fileID: 1236266908}
   m_Father: {fileID: 1350808276}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3913,7 +3912,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1646013585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1319470777}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: SkipTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1646013585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4126,7 +4137,7 @@ RectTransform:
   m_Children:
   - {fileID: 412135719}
   m_Father: {fileID: 1350808276}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4447,7 +4458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 425, y: -499}
+  m_AnchoredPosition: {x: 425, y: -413}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1800077935
@@ -5083,10 +5094,10 @@ MonoBehaviour:
   _appleManager: {fileID: 457591922}
   _currentPlayer: {fileID: 3423281953469346297}
   _gameInfo: {fileID: 412135720}
-  _roundStartCoins: 3
+  _roundStartCoins: 6
   _startingHearts: 2
   biteButton: {fileID: 1476449716}
-  _ShopObj: {fileID: 0}
+  _ShopObj: {fileID: 1241458641}
   _PlayerTurnStatus: {fileID: 1519909167}
   _NextTurnButton: {fileID: 1595330987}
   _TransitionToNextTurn: 0
