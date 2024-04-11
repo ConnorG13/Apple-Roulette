@@ -36,12 +36,12 @@ public class RoundEndState : State
     }
 
     public override void Tick()
-    {
+    { 
+        base.Tick();
+
         if (_controller._TransitionToNextRound)
         {
             _stateMachine.ChangeState(_stateMachine.StartState);
         }
-        
-        base.Tick();
     }
 }

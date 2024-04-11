@@ -54,9 +54,10 @@ public class PlayerTransitionState : State
             }else if (_controller._appleManager.CheckPoolFinished())
             {
                 _stateMachine.ChangeState(_stateMachine.EndState);
+            } else
+            {
+                _stateMachine.ChangeState(_stateMachine.MainState);
             }
-
-            _stateMachine.ChangeState(_stateMachine.MainState);
         }
         
     }
