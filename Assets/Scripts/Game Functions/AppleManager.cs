@@ -5,14 +5,12 @@ using TMPro;
 
 public class AppleManager : MonoBehaviour
 {
-    [SerializeField] private int _maxApples = 6;
-    [SerializeField] private int _poisonApples = 1;
-
+    [HideInInspector]
     public int _currentApple = 0;
+
     private int[] _Apples;
 
     public enum gameModes {Standard, Golden, DoublePoison, Heal, GoldenHeal, Crazy};
-
     public gameModes myGameMode;
 
     [HideInInspector]
@@ -27,7 +25,7 @@ public class AppleManager : MonoBehaviour
 
     public void CreatePool()
     {
-        _Apples = new int[_maxApples];
+        _Apples = new int[6];
 
         switch (myGameMode)
         {
@@ -165,7 +163,7 @@ public class AppleManager : MonoBehaviour
 
     public bool CheckPoolFinished()
     {
-        if (_currentApple >= _maxApples)
+        if (_currentApple >= 6)
         {
             return true;
         } else

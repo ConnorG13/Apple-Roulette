@@ -8,22 +8,29 @@ public class GameController : MonoBehaviour
 
     public List<GameObject> _players =  new List<GameObject>();
 
-    public AppleManager _appleManager;
-    public PlayerInfo _currentPlayer;
-    private int _playerTurn =  0;
-    public TextMeshProUGUI _gameInfo;
-
-    public TextMeshProUGUI _NextTurnText;
-
-
+    [Header("Starting Player Values")]
     public int _roundStartCoins;
     public int _startingHearts;
 
-    public Button biteButton;
-    public GameObject _ShopObj;
-    public TextMeshProUGUI _PlayerTurnStatus;
+    [Header("Script Calls")]
+    public AppleManager _appleManager;
+    public PlayerInfo _currentPlayer;
+    public AppleVisualScript appleVisuals;
 
-    [Header("Next Buttons")]
+    private int _playerTurn =  0;
+    
+    [Header("Text Mesh Pro")]
+    public TextMeshProUGUI _gameInfo;
+    public TextMeshProUGUI _PlayerTurnStatus;
+    public TextMeshProUGUI _NextTurnText;
+
+    [Header("Panels")]
+    public GameObject _ShopObj;
+    public GameObject _WinnerPanel;
+
+    [Header("Buttons")]
+    public Button biteButton;
+    
     public GameObject _NextTurnButton;
     [HideInInspector]
     public bool _TransitionToNextTurn = false;
@@ -32,9 +39,7 @@ public class GameController : MonoBehaviour
     [HideInInspector]
     public bool _TransitionToNextRound = false;
 
-    public GameObject _WinnerPanel;
 
-    public AppleVisualScript appleVisuals;
 
     private void Start()
     {
