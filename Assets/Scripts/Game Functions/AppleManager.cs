@@ -5,15 +5,15 @@ using TMPro;
 
 public class AppleManager : MonoBehaviour
 {
-    [SerializeField] private int _maxApples = 6;
-    [SerializeField] private int _poisonApples = 1;
-
+    [HideInInspector]
     public int _currentApple = 0;
-    private int _poolLength;
-    private int _poisonCount;
+
     private int[] _Apples;
 
-    //for state machine purposes
+    public enum gameModes {Standard, Golden, DoublePoison, Heal, GoldenHeal, Crazy};
+    public gameModes myGameMode;
+
+    [HideInInspector]
     public bool _hasBiten = false;
 
     private GameController _controller;
@@ -25,24 +25,59 @@ public class AppleManager : MonoBehaviour
 
     public void CreatePool()
     {
-        _poolLength = _maxApples;
-        _poisonCount = _poisonApples;
-        _Apples = new int[_poolLength];
+        _Apples = new int[6];
 
-        //poison
-        for (int t = 0; t < _poisonCount; t++)
+        switch (myGameMode)
         {
-            _Apples[t] = 1;
+            case gameModes.Standard:
+                _Apples[0] = 1;
+                _Apples[1] = 0;
+                _Apples[2] = 0;
+                _Apples[3] = 0;
+                _Apples[4] = 0;
+                _Apples[5] = 0;
+                break;
+            case gameModes.DoublePoison:
+                _Apples[0] = 1;
+                _Apples[1] = 1;
+                _Apples[2] = 0;
+                _Apples[3] = 0;
+                _Apples[4] = 0;
+                _Apples[5] = 0;
+                break;
+            case gameModes.Golden:
+                _Apples[0] = 1;
+                _Apples[1] = 2;
+                _Apples[2] = 0;
+                _Apples[3] = 0;
+                _Apples[4] = 0;
+                _Apples[5] = 0;
+                break;
+            case gameModes.Heal:
+                _Apples[0] = 1;
+                _Apples[1] = 3;
+                _Apples[2] = 0;
+                _Apples[3] = 0;
+                _Apples[4] = 0;
+                _Apples[5] = 0;
+                break;
+            case gameModes.GoldenHeal:
+                _Apples[0] = 1;
+                _Apples[1] = 2;
+                _Apples[2] = 3;
+                _Apples[3] = 0;
+                _Apples[4] = 0;
+                _Apples[5] = 0;
+                break;
+            case gameModes.Crazy:
+                _Apples[0] = 1;
+                _Apples[1] = 1;
+                _Apples[2] = 2;
+                _Apples[3] = 3;
+                _Apples[4] = 0;
+                _Apples[5] = 0;
+                break;
         }
-
-        //normal
-        for (int t = _poisonCount; t < _Apples.Length; t++)
-        {
-            _Apples[t] = 0;
-        }
-
-        //golden
-        _Apples[_maxApples - 1] = 2;
 
         //randomize
         for (int t = 0; t < _Apples.Length; t++)
@@ -84,7 +119,7 @@ public class AppleManager : MonoBehaviour
                 _controller._currentPlayer.hearts -= 1;
                 _controller.appleVisuals.appleBite(true);
                 break;
-            //gain money
+            //golden
             case 2:
                 _controller._gameInfo.text = "Wow! Golden apple!";
                 _controller._currentPlayer.coins += 3;
@@ -128,7 +163,7 @@ public class AppleManager : MonoBehaviour
 
     public bool CheckPoolFinished()
     {
-        if (_currentApple >= _maxApples)
+        if (_currentApple >= 6)
         {
             return true;
         } else

@@ -7,19 +7,17 @@ public class PlayerInfo : MonoBehaviour
 
     public int coins;
     public int hearts;
-    public string name;
     public TextMeshProUGUI heartsText;
     public TextMeshProUGUI coinsText;
     private GameController gameController;
     public GameObject skull;
     public bool isAlive = true;
-    // Start is called before the first frame update
+
     void Awake()
     {
-        gameController = GameObject.FindObjectOfType<GameController>();
-
-        
+        gameController = GameObject.FindObjectOfType<GameController>();  
     }
+
     private void Start()
     {
         coins = 0;
@@ -27,7 +25,6 @@ public class PlayerInfo : MonoBehaviour
         skull.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         heartsText.text = ":" + hearts.ToString();
