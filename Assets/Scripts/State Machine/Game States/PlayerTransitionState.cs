@@ -28,7 +28,7 @@ public class PlayerTransitionState : State
             Debug.Log("swap player in states");
         }
 
-        _controller._PlayerTurnStatus.text = "Pass the Phone to " + _controller._currentPlayer.name;
+        _controller._NextTurnText.text = "Pass the Phone to " + _controller._currentPlayer.name;
 
         _controller._NextTurnButton.SetActive(true);
 
