@@ -7,40 +7,44 @@ public class AppleManager : MonoBehaviour
 {
     [SerializeField] private int _maxApples = 6;
     [SerializeField] private int _poisonApples = 1;
+
     public int _currentApple = 0;
     private int _poolLength;
     private int _poisonCount;
     private int[] _Apples;
+
+    //for state machine purposes
     public bool _hasBiten = false;
 
-    //private PlayerInfo _currentPlayer;
     private GameController _controller;
 
     void Start()
     {
         _controller = GameObject.FindObjectOfType<GameController>();
     }
+
     public void CreatePool()
     {
-        //variables setting max apples + poison apples
         _poolLength = _maxApples;
         _poisonCount = _poisonApples;
-        //create new pool of 6 apples
         _Apples = new int[_poolLength];
 
-        //make the first apple poisoned
+        //poison
         for (int t = 0; t < _poisonCount; t++)
         {
             _Apples[t] = 1;
         }
 
-        //every other apple is normal
+        //normal
         for (int t = _poisonCount; t < _Apples.Length; t++)
         {
             _Apples[t] = 0;
         }
 
-        //shuffle
+        //golden
+        _Apples[_maxApples - 1] = 2;
+
+        //randomize
         for (int t = 0; t < _Apples.Length; t++)
         {
             int hold = _Apples[t];
@@ -52,9 +56,9 @@ public class AppleManager : MonoBehaviour
         _controller.appleVisuals.refillPool();
 
     }
+
     public void ShufflePool()
     {
-        //shuffle all apples that haven't been bitten yet (index X and onwards in array)
         for (int t = _currentApple; t < _Apples.Length; t++)
         {
             int hold = _Apples[t];
@@ -63,44 +67,64 @@ public class AppleManager : MonoBehaviour
             _Apples[r] = hold;
         }
     }
+
     public void PullApple()
     {
-        //_currentPlayer = _controller._currentPlayer.GetComponent<PlayerInfo>();
-        //if the apple is safe...
-        if (_Apples[_currentApple] == 0)
-        {
-            _controller._gameInfo.text = "That was a Safe Apple!";
-            _controller.appleVisuals.appleBite(false);
-        }
-        else
-        {
-            _controller._gameInfo.text = "That was a Posioned Apple! OH NO";
-            _controller._currentPlayer.hearts -= 1;
-            _controller.appleVisuals.appleBite(true);
 
+        switch (_Apples[_currentApple])
+        {
+            //normal
+            case 0:
+                _controller._gameInfo.text = "Safe!";
+                break;
+            //poison
+            case 1:
+                _controller._gameInfo.text = "Uh oh! Poisoned!";
+                _controller._currentPlayer.hearts -= 1;
+                break;
+            //gain money
+            case 2:
+                _controller._gameInfo.text = "Wow! Golden apple!";
+                _controller._currentPlayer.coins += 3;
+                break;
+            //heal
+            case 3:
+                _controller._gameInfo.text = "Healthy!";
+                if (_controller._currentPlayer.hearts < _controller._startingHearts)
+                {
+                    _controller._currentPlayer.hearts++;
+                }
+                break;
+            //schrodinger
+            case 4:
+                _controller._gameInfo.text = "Weird, but tasty!";
+                break;
         }
 
-        //move on to the next index value
         _currentApple++;
-        //then check to see if there are any apples left
         _hasBiten = true;
     }
+
     public string SeeNextApple()
     {
-        //effectively the same as pulling an apple...
-        //but without moving to the next index
+
         if (_Apples[_currentApple] == 0)
         {
             return "This next apple is safe!";
         }
+        else if (_Apples[_currentApple] == 4)
+        {
+            _Apples[_currentApple] = 1;
+            return "This apple just went bad!";
+        }
         else
         {
-            return "This next apple is poisoned!";
+            return "This next apple is different!";
         }
     }
+
     public bool CheckPoolFinished()
     {
-        //if we're at the end of the index
         if (_currentApple >= _maxApples)
         {
             return true;
