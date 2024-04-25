@@ -76,16 +76,19 @@ public class AppleManager : MonoBehaviour
             //normal
             case 0:
                 _controller._gameInfo.text = "Safe!";
+                _controller.appleVisuals.appleBite(false);
                 break;
             //poison
             case 1:
                 _controller._gameInfo.text = "Uh oh! Poisoned!";
                 _controller._currentPlayer.hearts -= 1;
+                _controller.appleVisuals.appleBite(true);
                 break;
             //gain money
             case 2:
                 _controller._gameInfo.text = "Wow! Golden apple!";
                 _controller._currentPlayer.coins += 3;
+                _controller.appleVisuals.appleBite(false);
                 break;
             //heal
             case 3:

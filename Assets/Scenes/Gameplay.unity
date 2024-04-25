@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 20070619}
   - component: {fileID: 20070621}
   - component: {fileID: 20070620}
+  - component: {fileID: 20070622}
   m_Layer: 5
   m_Name: Apple02
   m_TagString: Untagged
@@ -199,6 +200,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20070618}
   m_CullTransparentMesh: 1
+--- !u!114 &20070622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20070618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e95506e5cf8a84e9ff2dcf1d84b276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
+  appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
+  appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
+  appleGolden: {fileID: 0}
+  hasBitten: 0
+  isBad: 0
 --- !u!1 &31500723
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +525,7 @@ GameObject:
   - component: {fileID: 212165807}
   - component: {fileID: 212165809}
   - component: {fileID: 212165808}
+  - component: {fileID: 212165810}
   m_Layer: 5
   m_Name: Apple01
   m_TagString: Untagged
@@ -571,6 +591,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212165806}
   m_CullTransparentMesh: 1
+--- !u!114 &212165810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212165806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e95506e5cf8a84e9ff2dcf1d84b276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
+  appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
+  appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
+  appleGolden: {fileID: 0}
+  hasBitten: 0
+  isBad: 0
 --- !u!1 &214954846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,8 +1473,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1833,6 +1871,7 @@ GameObject:
   - component: {fileID: 475341543}
   - component: {fileID: 475341545}
   - component: {fileID: 475341544}
+  - component: {fileID: 475341546}
   m_Layer: 5
   m_Name: Apple06
   m_TagString: Untagged
@@ -1898,6 +1937,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475341542}
   m_CullTransparentMesh: 1
+--- !u!114 &475341546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475341542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e95506e5cf8a84e9ff2dcf1d84b276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
+  appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
+  appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
+  appleGolden: {fileID: 0}
+  hasBitten: 0
+  isBad: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,6 +3240,7 @@ GameObject:
   - component: {fileID: 885331639}
   - component: {fileID: 885331641}
   - component: {fileID: 885331640}
+  - component: {fileID: 885331642}
   m_Layer: 5
   m_Name: Apple03
   m_TagString: Untagged
@@ -3248,6 +3306,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885331638}
   m_CullTransparentMesh: 1
+--- !u!114 &885331642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885331638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e95506e5cf8a84e9ff2dcf1d84b276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
+  appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
+  appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
+  appleGolden: {fileID: 0}
+  hasBitten: 0
+  isBad: 0
 --- !u!1 &890742067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3695,6 +3771,7 @@ GameObject:
   - component: {fileID: 1131007613}
   - component: {fileID: 1131007615}
   - component: {fileID: 1131007614}
+  - component: {fileID: 1131007616}
   m_Layer: 5
   m_Name: Apple05
   m_TagString: Untagged
@@ -3760,6 +3837,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131007612}
   m_CullTransparentMesh: 1
+--- !u!114 &1131007616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131007612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e95506e5cf8a84e9ff2dcf1d84b276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
+  appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
+  appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
+  appleGolden: {fileID: 0}
+  hasBitten: 0
+  isBad: 0
 --- !u!1 &1221701207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,6 +3866,7 @@ GameObject:
   - component: {fileID: 1221701208}
   - component: {fileID: 1221701210}
   - component: {fileID: 1221701209}
+  - component: {fileID: 1221701211}
   m_Layer: 5
   m_Name: Apple04
   m_TagString: Untagged
@@ -3836,6 +3932,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221701207}
   m_CullTransparentMesh: 1
+--- !u!114 &1221701211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221701207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e95506e5cf8a84e9ff2dcf1d84b276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
+  appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
+  appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
+  appleGolden: {fileID: 0}
+  hasBitten: 0
+  isBad: 0
 --- !u!1 &1236266907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,7 +4011,7 @@ MonoBehaviour:
   m_text: NEXT TURN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 826a2eff57f8e8143b1872431b4f1e87, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 5068146110237022634, guid: 826a2eff57f8e8143b1872431b4f1e87, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3921,8 +4035,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 12.07
+  m_fontSizeBase: 12.07
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3960,7 +4074,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1236266910
@@ -3981,6 +4095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1237569660}
   - component: {fileID: 1237569661}
+  - component: {fileID: 1237569662}
   m_Layer: 5
   m_Name: Apples
   m_TagString: Untagged
@@ -4022,6 +4137,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237569659}
   m_CullTransparentMesh: 1
+--- !u!114 &1237569662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237569659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8f2461a69798c4c9232fa528ecc2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleVisuals:
+  - {fileID: 212165806}
+  - {fileID: 20070618}
+  - {fileID: 885331638}
+  - {fileID: 1221701207}
+  - {fileID: 1131007612}
+  - {fileID: 475341542}
 --- !u!1 &1241458641
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,7 +5829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: 0, y: -70}
   m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1519909167
@@ -5745,8 +5879,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 31.65
+  m_fontSizeBase: 31.65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5781,7 +5915,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -10.322128, w: 4.072567}
+  m_margin: {x: 0, y: 0, z: -10.322128, w: 45.198368}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6070,7 +6204,7 @@ RectTransform:
   m_GameObject: {fileID: 1595330987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.4878, y: 7.4878, z: 7.4878}
+  m_LocalScale: {x: 5.369951, y: 5.369951, z: 5.369951}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1236266908}
@@ -7887,8 +8021,9 @@ MonoBehaviour:
   _appleManager: {fileID: 457591922}
   _currentPlayer: {fileID: 3423281953469346297}
   _gameInfo: {fileID: 412135720}
-  _roundStartCoins: 6
-  _startingHearts: 1
+  _NextTurnText: {fileID: 1236266909}
+  _roundStartCoins: 4
+  _startingHearts: 2
   biteButton: {fileID: 1476449716}
   _ShopObj: {fileID: 1241458641}
   _PlayerTurnStatus: {fileID: 1519909167}
@@ -7897,6 +8032,7 @@ MonoBehaviour:
   _NextRoundButton: {fileID: 1441150881}
   _TransitionToNextRound: 0
   _WinnerPanel: {fileID: 882766885}
+  appleVisuals: {fileID: 1237569662}
 --- !u!1 &2114775001
 GameObject:
   m_ObjectHideFlags: 0

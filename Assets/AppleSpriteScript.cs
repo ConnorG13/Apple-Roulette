@@ -8,6 +8,7 @@ public class AppleSpriteScript : MonoBehaviour
     public Sprite appleOutline;
     public Sprite appleGood;
     public Sprite appleBad;
+    public Sprite appleGolden;
     public bool hasBitten;
     public bool isBad;
     private Image appleImage;
