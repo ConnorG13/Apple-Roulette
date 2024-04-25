@@ -23,10 +23,13 @@ public class GameController : MonoBehaviour
     public GameObject _ShopObj;
     public TextMeshProUGUI _PlayerTurnStatus;
 
+    [Header("Next Buttons")]
     public GameObject _NextTurnButton;
+    [HideInInspector]
     public bool _TransitionToNextTurn = false;
 
     public GameObject _NextRoundButton;
+    [HideInInspector]
     public bool _TransitionToNextRound = false;
 
     public GameObject _WinnerPanel;
