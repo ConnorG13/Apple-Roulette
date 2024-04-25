@@ -20,18 +20,26 @@ public class AppleVisualScript : MonoBehaviour
         
     }
 
-    public void appleBite(bool isBad)
+    public void appleBite(int appID)
     {
-        if (isBad)
+        if (appID == 1)
         {
             AppleSpriteScript app = appleVisuals[appleVisuals.Count-1].GetComponent<AppleSpriteScript>();
             app.hasBitten = true;
+            app.appleID = appID;
         }
-        else
+        else if(appID == 2)
         {
             AppleSpriteScript app = appleVisuals[appleNumber].GetComponent<AppleSpriteScript>();
             appleNumber++;
             app.hasBitten = true;
+            app.appleID = appID;
+        }
+        else if(appID == 3)
+        {
+            AppleSpriteScript app = appleVisuals[appleNumber].GetComponent<AppleSpriteScript>();
+            appleNumber++;
+            app.appleID = appID;
         }
     }
 

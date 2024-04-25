@@ -215,8 +215,9 @@ MonoBehaviour:
   appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
   appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
   appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
-  appleGolden: {fileID: 0}
+  appleGolden: {fileID: 21300000, guid: 64c56f3efb4e0614ea9f3ccc4091d68d, type: 3}
   hasBitten: 0
+  appleID: 0
   isBad: 0
 --- !u!1 &31500723
 GameObject:
@@ -306,6 +307,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
         m_MethodName: AppleCheck
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1241458641}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -606,8 +619,9 @@ MonoBehaviour:
   appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
   appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
   appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
-  appleGolden: {fileID: 0}
+  appleGolden: {fileID: 21300000, guid: 64c56f3efb4e0614ea9f3ccc4091d68d, type: 3}
   hasBitten: 0
+  appleID: 0
   isBad: 0
 --- !u!1 &214954846
 GameObject:
@@ -1734,8 +1748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9ff1a07851784448c2a3f462d45e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxApples: 6
-  _poisonApples: 1
   _currentApple: 0
   myGameMode: 1
   _hasBiten: 0
@@ -1965,8 +1977,9 @@ MonoBehaviour:
   appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
   appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
   appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
-  appleGolden: {fileID: 0}
+  appleGolden: {fileID: 21300000, guid: 64c56f3efb4e0614ea9f3ccc4091d68d, type: 3}
   hasBitten: 0
+  appleID: 0
   isBad: 1
 --- !u!1 &519420028
 GameObject:
@@ -3224,8 +3237,9 @@ MonoBehaviour:
   appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
   appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
   appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
-  appleGolden: {fileID: 0}
+  appleGolden: {fileID: 21300000, guid: 64c56f3efb4e0614ea9f3ccc4091d68d, type: 3}
   hasBitten: 0
+  appleID: 0
   isBad: 0
 --- !u!1 &890742067
 GameObject:
@@ -3620,6 +3634,7 @@ MonoBehaviour:
   appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
   appleGolden: {fileID: 21300000, guid: 64c56f3efb4e0614ea9f3ccc4091d68d, type: 3}
   hasBitten: 0
+  appleID: 0
   isBad: 0
 --- !u!1 &1221701207
 GameObject:
@@ -3713,8 +3728,9 @@ MonoBehaviour:
   appleOutline: {fileID: 21300000, guid: cb66499fab2111141bc205b83576c584, type: 3}
   appleGood: {fileID: 21300000, guid: 200e030cd4fefb046bfc29042221cbf1, type: 3}
   appleBad: {fileID: 21300000, guid: 5d00fa146935cca48aa145a5b2896ad8, type: 3}
-  appleGolden: {fileID: 0}
+  appleGolden: {fileID: 21300000, guid: 64c56f3efb4e0614ea9f3ccc4091d68d, type: 3}
   hasBitten: 0
+  appleID: 0
   isBad: 0
 --- !u!1 &1236266907
 GameObject:
@@ -7685,21 +7701,21 @@ MonoBehaviour:
   - {fileID: 1477871243}
   - {fileID: 1789415177}
   - {fileID: 351836721}
-  _appleManager: {fileID: 457591922}
-  _currentPlayer: {fileID: 3423281953469346297}
-  _gameInfo: {fileID: 412135720}
-  _NextTurnText: {fileID: 1236266909}
   _roundStartCoins: 4
   _startingHearts: 2
-  biteButton: {fileID: 1476449716}
-  _ShopObj: {fileID: 1241458641}
+  _appleManager: {fileID: 457591922}
+  _currentPlayer: {fileID: 3423281953469346297}
+  appleVisuals: {fileID: 1237569662}
+  _gameInfo: {fileID: 412135720}
   _PlayerTurnStatus: {fileID: 1519909167}
+  _NextTurnText: {fileID: 1236266909}
+  _ShopObj: {fileID: 1241458641}
+  _WinnerPanel: {fileID: 882766885}
+  biteButton: {fileID: 1476449716}
   _NextTurnButton: {fileID: 1595330987}
   _TransitionToNextTurn: 0
   _NextRoundButton: {fileID: 1441150881}
   _TransitionToNextRound: 0
-  _WinnerPanel: {fileID: 882766885}
-  appleVisuals: {fileID: 1237569662}
 --- !u!1 &2114775001
 GameObject:
   m_ObjectHideFlags: 0
