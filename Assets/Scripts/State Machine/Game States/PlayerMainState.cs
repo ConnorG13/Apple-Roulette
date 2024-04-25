@@ -17,7 +17,7 @@ public class PlayerMainState : State
     public override void Enter()
     {
         base.Enter();
-        _controller._PlayerTurnStatus.text = "It is currently " + _controller._currentPlayer.name + "'s Turn";
+        _controller._PlayerTurnStatus.text = _controller._currentPlayer.name + "'s Turn";
         _controller._gameInfo.text = "Open the shop and spend coins or Bite into the Apple.";
         _controller.biteButton.enabled = true;
         Debug.Log("STATE: Player Main");

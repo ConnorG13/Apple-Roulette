@@ -49,6 +49,8 @@ public class AppleManager : MonoBehaviour
             _Apples[r] = hold;
         }
 
+        _controller.appleVisuals.refillPool();
+
     }
     public void ShufflePool()
     {
@@ -68,12 +70,14 @@ public class AppleManager : MonoBehaviour
         if (_Apples[_currentApple] == 0)
         {
             _controller._gameInfo.text = "That was a Safe Apple!";
+            _controller.appleVisuals.appleBite(false);
         }
         else
         {
             _controller._gameInfo.text = "That was a Posioned Apple! OH NO";
             _controller._currentPlayer.hearts -= 1;
-            
+            _controller.appleVisuals.appleBite(true);
+
         }
 
         //move on to the next index value

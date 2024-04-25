@@ -22,7 +22,7 @@ public class PlayerInfo : MonoBehaviour
     }
     private void Start()
     {
-        coins = gameController._roundStartCoins;
+        coins = 0;
         hearts = gameController._startingHearts;
         skull.SetActive(false);
     }

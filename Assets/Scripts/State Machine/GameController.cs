@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     private int _playerTurn =  0;
     public TextMeshProUGUI _gameInfo;
 
+    public TextMeshProUGUI _NextTurnText;
+
+
     public int _roundStartCoins;
     public int _startingHearts;
 
@@ -27,6 +30,8 @@ public class GameController : MonoBehaviour
     public bool _TransitionToNextRound = false;
 
     public GameObject _WinnerPanel;
+
+    public AppleVisualScript appleVisuals;
 
     private void Start()
     {

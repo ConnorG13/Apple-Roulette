@@ -17,6 +17,10 @@ public class RoundStartState : State
     {
         base.Enter();
         Debug.Log("STATE: Round Start");
+        foreach(GameObject obj in _controller._players)
+        {
+            obj.GetComponent<PlayerInfo>().coins += _controller._roundStartCoins;
+        }
     }
 
     public override void Exit()
