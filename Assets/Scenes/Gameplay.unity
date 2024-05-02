@@ -1593,7 +1593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentApple: 0
-  myGameMode: 1
+  myGameMode: 0
+  _parsedMode: 0
   _playerPoisoned: {fileID: 771587286}
   _playerDeath: {fileID: 290682415}
   _playerSafe: {fileID: 1022175814}
