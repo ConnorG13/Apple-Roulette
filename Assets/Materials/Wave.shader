@@ -8,8 +8,9 @@ Shader "Unlit/Wave"
     }
     SubShader
     {
-        Tags {  "RenderType" = "Opaque" }
+        Tags {  "RenderType" = "Transparent" }
         LOD 100
+        Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
         {

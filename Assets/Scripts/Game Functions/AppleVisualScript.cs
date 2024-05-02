@@ -11,7 +11,7 @@ public class AppleVisualScript : MonoBehaviour
     [SerializeField] public GameObject GoodWaterApple;
     [SerializeField] public GameObject BadWaterApple;
     [SerializeField] public GameObject WaterSplash;
-    [SerializeField] public Audio
+    [SerializeField] public AudioSource SplashAudio;
 
     public List<(GameObject, Vector2)> fallingApples = new List<(GameObject, Vector2)>();
     private GameController _controller;
@@ -145,7 +145,8 @@ public class AppleVisualScript : MonoBehaviour
     IEnumerator PlayWaterSplash()
     {
         WaterSplash.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
+        SplashAudio.Play(1);
+        yield return new WaitForSeconds(2.0f);
         doneSplashAnimation = true;
     }
 
