@@ -75,8 +75,8 @@
     <Compile Include="Assets\Scripts\State Machine\State.cs" />
     <Compile Include="Assets\Scripts\Game Functions\AppleSpriteScript.cs" />
     <Compile Include="Assets\Scripts\State Machine\Game States\PlayerTransitionState.cs" />
-    <Compile Include="Assets\Scripts\Game Functions\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\Game Functions\ModeTracker.cs" />
+    <Compile Include="Assets\Scripts\Game Functions\ScreenSwapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
