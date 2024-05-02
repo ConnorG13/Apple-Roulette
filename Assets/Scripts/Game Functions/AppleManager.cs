@@ -13,6 +13,10 @@ public class AppleManager : MonoBehaviour
     public enum gameModes {Standard, Golden, DoublePoison, Heal, GoldenHeal, Crazy};
     public gameModes myGameMode;
 
+    public AudioSource _playerPoisoned;
+    public AudioSource _playerDeath;
+    public AudioSource _playerSafe;
+
     [HideInInspector]
     public bool _hasBiten = false;
 
@@ -112,12 +116,19 @@ public class AppleManager : MonoBehaviour
             case 0:
                 _controller._gameInfo.text = "Safe!";
                 _controller.appleVisuals.appleBite(false);
+                _playerSafe.PlayDelayed(0.85f);
                 break;
             //poison
             case 1:
                 _controller._gameInfo.text = "Uh oh! Poisoned!";
                 _controller._currentPlayer.hearts -= 1;
                 _controller.appleVisuals.appleBite(true);
+                if(_controller._currentPlayer.hearts == 0)
+                {
+                    _playerDeath.PlayDelayed(0.85f);
+                }
+                else
+                _playerPoisoned.PlayDelayed(0.85f);
                 break;
             //golden
             case 2:

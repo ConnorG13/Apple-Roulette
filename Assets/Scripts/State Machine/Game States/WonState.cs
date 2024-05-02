@@ -16,6 +16,7 @@ public class WonState : State
     public override void Enter()
     {
         base.Enter();
+        _controller._playerWin.Play();
         _controller._WinnerPanel.SetActive(true);
         Debug.Log("STATE: Won");
 

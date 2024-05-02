@@ -11,12 +11,15 @@ public class RoundStartState : State
     {
         _stateMachine = stateMachine;
         _controller = controller;
+        
     }
 
     public override void Enter()
     {
         base.Enter();
         Debug.Log("STATE: Round Start");
+        _controller._roundStart.Play();
+        
         foreach(GameObject obj in _controller._players)
         {
             obj.GetComponent<PlayerInfo>().coins += _controller._roundStartCoins;
