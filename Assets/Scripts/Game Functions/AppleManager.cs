@@ -14,6 +14,8 @@ public class AppleManager : MonoBehaviour
     public enum gameModes {Standard, Golden, DoublePoison, Heal, GoldenHeal, Crazy};
     public gameModes myGameMode;
 
+    public gameModes _parsedMode;
+
     public AudioSource _playerPoisoned;
     public AudioSource _playerDeath;
     public AudioSource _playerSafe;
@@ -22,16 +24,22 @@ public class AppleManager : MonoBehaviour
     public bool _hasBiten = false;
 
     private GameController _controller;
+    private ModeTracker _mode;
 
     void Start()
     {
         _controller = GameObject.FindObjectOfType<GameController>();
+        _mode = GameObject.FindObjectOfType<ModeTracker>();
+
+        _parsedMode = (gameModes)System.Enum.Parse(typeof(gameModes), _mode._modeName);
+
     }
 
     public void CreatePool()
     {
         _Apples = new int[6];
-        switch (myGameMode)
+
+        switch (_parsedMode)
         {
             case gameModes.Standard:
                 _Apples[0] = 1;
@@ -77,7 +85,7 @@ public class AppleManager : MonoBehaviour
                 _Apples[0] = 1;
                 _Apples[1] = 1;
                 _Apples[2] = 2;
-                _Apples[3] = 3;
+                _Apples[3] = 2;
                 _Apples[4] = 0;
                 _Apples[5] = 0;
                 break;
