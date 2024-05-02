@@ -44,33 +44,33 @@ public class AppleVisualScript : MonoBehaviour
 
 
 
-    void Update() {
-        if (areFalling)
-        {
-            areFalling = false;
-            foreach ((GameObject fallingApple, Vector2 finalPos) in fallingApples)
-            {
-                if (fallingApple.transform.position.y <= finalPos.y)
-                {
-                    continue;
-                }
-                areFalling = true;
-                fallingApple.transform.position = new Vector2(fallingApple.transform.position.x, fallingApple.transform.position.y - 0.1f);
-            }
-        } else if (!doneFallingAnimation)
-        {
-            // Remove whole apples and replace with bitten apples
-            foreach ((GameObject obj, Vector2 pos) in fallingApples)
-            {
-                Destroy(obj);
-            }
+    // void Update() {
+    //     if (areFalling)
+    //     {
+    //         areFalling = false;
+    //         foreach ((GameObject fallingApple, Vector2 finalPos) in fallingApples)
+    //         {
+    //             if (fallingApple.transform.position.y <= finalPos.y)
+    //             {
+    //                 continue;
+    //             }
+    //             areFalling = true;
+    //             fallingApple.transform.position = new Vector2(fallingApple.transform.position.x, fallingApple.transform.position.y - 0.1f);
+    //         }
+    //     } else if (!doneFallingAnimation)
+    //     {
+    //         // Remove whole apples and replace with bitten apples
+    //         foreach ((GameObject obj, Vector2 pos) in fallingApples)
+    //         {
+    //             Destroy(obj);
+    //         }
 
             
 
             
-            doneFallingAnimation = true;
-        }
-    }
+    //         doneFallingAnimation = true;
+    //     }
+    // }
 
 
 
@@ -118,13 +118,13 @@ public class AppleVisualScript : MonoBehaviour
             app.hasBitten = false;
         }
         
-        foreach(int apple in applesInBasin)
-        {
-            Vector2 randomPosition = GetRandomPositionInAppleBounds();
-            Vector2 fallingFromTop = new Vector2(randomPosition.x, 540);
-            GameObject obj = Instantiate(wholeApples[apple], fallingFromTop, Quaternion.identity, applesParent.transform);
-            fallingApples.Add((obj, fallingFromTop));
-        }
+        // foreach(int apple in applesInBasin)
+        // {
+        //     Vector2 randomPosition = GetRandomPositionInAppleBounds();
+        //     Vector2 fallingFromTop = new Vector2(randomPosition.x, 540);
+        //     GameObject obj = Instantiate(wholeApples[apple], fallingFromTop, Quaternion.identity, applesParent.transform);
+        //     fallingApples.Add((obj, fallingFromTop));
+        // }
 
         appleNumber = 0;
  
