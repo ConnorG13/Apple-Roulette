@@ -11,6 +11,7 @@ public class AppleVisualScript : MonoBehaviour
     [SerializeField] public GameObject GoodWaterApple;
     [SerializeField] public GameObject BadWaterApple;
     [SerializeField] public GameObject WaterSplash;
+    [SerializeField] public Audio
 
     public List<(GameObject, Vector2)> fallingApples = new List<(GameObject, Vector2)>();
     private GameController _controller;

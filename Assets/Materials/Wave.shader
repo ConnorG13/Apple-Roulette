@@ -8,10 +8,8 @@ Shader "Unlit/Wave"
     }
     SubShader
     {
-        Tags {  "RenderType"="Transparent"   
-                "RenderQueue"="Transparent" }
+        Tags {  "RenderType" = "Opaque" }
         LOD 100
-        Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
         {
@@ -53,6 +51,7 @@ Shader "Unlit/Wave"
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
+                clip(col.w - 0.01);
                 return col;
             }
             ENDCG

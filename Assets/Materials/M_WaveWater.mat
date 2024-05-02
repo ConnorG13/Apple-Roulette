@@ -38,7 +38,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitude: 0.001
+    - _Amplitude: 0.008
     - _EnableExternalAlpha: 0
     - _Offset: 2
     m_Colors:
