@@ -8,6 +8,12 @@ public class GameController : MonoBehaviour
 
     public List<GameObject> _players =  new List<GameObject>();
 
+
+    [Header("Sounds")]
+    public AudioSource _playerWin;
+    public AudioSource _roundStart;
+
+
     [Header("Starting Player Values")]
     public int _roundStartCoins;
     public int _startingHearts;
@@ -71,6 +77,7 @@ public class GameController : MonoBehaviour
     public void NextRoundPressed()
     {
         _TransitionToNextRound = true;
+        
     }
 
 }
