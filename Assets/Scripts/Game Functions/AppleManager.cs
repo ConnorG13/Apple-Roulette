@@ -9,6 +9,7 @@ public class AppleManager : MonoBehaviour
     public int _currentApple = 0;
 
     private int[] _Apples;
+    private List<int> _applesInBasin = new List<int>();
 
     public enum gameModes {Standard, Golden, DoublePoison, Heal, GoldenHeal, Crazy};
     public gameModes myGameMode;
@@ -26,7 +27,6 @@ public class AppleManager : MonoBehaviour
     public void CreatePool()
     {
         _Apples = new int[6];
-
         switch (myGameMode)
         {
             case gameModes.Standard:
@@ -88,8 +88,15 @@ public class AppleManager : MonoBehaviour
             _Apples[r] = hold;
         }
 
-        _controller.appleVisuals.refillPool();
+        AddApplesInBasin(_Apples);
 
+        _controller.appleVisuals.refillPool(_applesInBasin);
+    }
+
+    private void AddApplesInBasin(int[] apples) {
+        for (int i = 0; i < apples.Length; i++) {
+            _applesInBasin.Add(apples[i]);
+        }
     }
 
     public void ShufflePool()
