@@ -8,6 +8,7 @@ public class ScreenSwapper : MonoBehaviour
     private GameObject _mainScreen;
     private GameObject _modeScreen;
     private GameObject _rulesScreen;
+    private GameObject _appleScreen;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class ScreenSwapper : MonoBehaviour
        _mainScreen = this.gameObject.transform.GetChild(2).gameObject;
        _modeScreen = this.gameObject.transform.GetChild(3).gameObject;
        _rulesScreen = this.gameObject.transform.GetChild(4).gameObject;
+       _appleScreen = this.gameObject.transform.GetChild(5).gameObject;
     }
 
     public void SwapToScreen(int _screenNum)
@@ -26,18 +28,28 @@ public class ScreenSwapper : MonoBehaviour
                 _mainScreen.SetActive(true);
                 _modeScreen.SetActive(false);
                 _rulesScreen.SetActive(false);
+                _appleScreen.SetActive(false);
                 break;
             case 3:
                 _title.SetActive(false);
                 _mainScreen.SetActive(false);
                 _modeScreen.SetActive(true);
                 _rulesScreen.SetActive(false);
+                _appleScreen.SetActive(false);
                 break;
             case 4:
                 _title.SetActive(false);
                 _mainScreen.SetActive(false);
                 _modeScreen.SetActive(false);
                 _rulesScreen.SetActive(true);
+                _appleScreen.SetActive(false);
+                break;
+            case 5:
+                _title.SetActive(false);
+                _mainScreen.SetActive(false);
+                _modeScreen.SetActive(false);
+                _rulesScreen.SetActive(false);
+                _appleScreen.SetActive(true);
                 break;
         }
     }
