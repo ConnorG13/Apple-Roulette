@@ -10,6 +10,7 @@ public class AppleSpriteScript : MonoBehaviour
     public Sprite appleBad;
     public Sprite appleGolden;
     public bool hasBitten;
+    public int appleID;
     public bool isBad;
     private Image appleImage;
 
@@ -37,13 +38,17 @@ public class AppleSpriteScript : MonoBehaviour
         {
             appleImage.sprite = appleOutline;
         }
-        else if (isBad)
+        else if (appleID == 1)
         {
             appleImage.sprite = appleBad;
         }
-        else
+        else if (appleID == 2)
         {
             appleImage.sprite = appleGood;
+        }
+        else if(appleID == 3)
+        {
+            appleImage.sprite = appleGolden;
         }
     }
 }
