@@ -85,7 +85,7 @@ public class AppleManager : MonoBehaviour
                 _Apples[0] = 1;
                 _Apples[1] = 1;
                 _Apples[2] = 2;
-                _Apples[3] = 3;
+                _Apples[3] = 2;
                 _Apples[4] = 0;
                 _Apples[5] = 0;
                 break;

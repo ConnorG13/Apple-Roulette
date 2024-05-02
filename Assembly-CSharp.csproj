@@ -66,13 +66,15 @@
     <Compile Include="Assets\Scripts\Game Functions\AppleManager.cs" />
     <Compile Include="Assets\Scripts\State Machine\StateMachineMB.cs" />
     <Compile Include="Assets\Scripts\Game Functions\AppleVisualScript.cs" />
-    <Compile Include="Assets\Scripts\Game Functions\ParticleBuy.cs" />
     <Compile Include="Assets\Scripts\State Machine\Game States\PlayerMainState.cs" />
     <Compile Include="Assets\Scripts\State Machine\Game States\WonState.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\State Machine\State.cs" />
     <Compile Include="Assets\Scripts\Game Functions\AppleSpriteScript.cs" />
     <Compile Include="Assets\Scripts\State Machine\Game States\PlayerTransitionState.cs" />
+    <Compile Include="Assets\Scripts\Game Functions\ModeTracker.cs" />
+    <Compile Include="Assets\Scripts\Game Functions\ScreenSwapper.cs" />
+    <Compile Include="Assets\Scripts\Game Functions\ParticleBuy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
