@@ -16,13 +16,17 @@ public class UIAnimation : MonoBehaviour
     {
         image = GetComponent<Image>();
     }
-    private void Update()
+
+    void Update()
     {
-        if ((timer += Time.deltaTime) >= (duration / sprites.Length))
+        timer += Time.deltaTime;
+        if (duration <= 0 || sprites.Length == 0) return;
+
+        if (timer >= duration/sprites.Length)
         {
             timer = 0;
-            image.sprite = sprites[index];
-            index = (index + 1) % sprites.Length;
+            index %= sprites.Length;
+            image.sprite = sprites[index++];
         }
     }
 }
