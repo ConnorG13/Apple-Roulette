@@ -78,8 +78,9 @@ public class AppleVisualScript : MonoBehaviour
     {
         if (appID == 1)
         {
-            AppleSpriteScript app = appleVisuals[appleVisuals.Count-1].GetComponent<AppleSpriteScript>();
+            AppleSpriteScript app = appleVisuals[appleNumber].GetComponent<AppleSpriteScript>();
             app.hasBitten = true;
+            appleNumber++;
             app.appleID = appID;
         }
         else if(appID == 2)
@@ -115,6 +116,8 @@ public class AppleVisualScript : MonoBehaviour
         foreach(GameObject obj in appleVisuals)
         {
             AppleSpriteScript app = obj.GetComponent<AppleSpriteScript>();
+            app.isBad = false;
+            app.appleID = 0;
             app.hasBitten = false;
         }
         

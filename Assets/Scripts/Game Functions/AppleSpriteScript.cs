@@ -34,7 +34,7 @@ public class AppleSpriteScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (hasBitten)
+        if (!hasBitten)
         {
             appleImage.sprite = appleOutline;
         }

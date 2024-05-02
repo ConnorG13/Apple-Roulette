@@ -50,15 +50,18 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         _currentPlayer = _players[_playerTurn].GetComponent<PlayerInfo>();
+        _currentPlayer.playerOutline.SetActive(true);
     }
     public void switchPlayerTurn()
     {
+        _currentPlayer.playerOutline.SetActive(false);
         _playerTurn += 1;
         if(_playerTurn > _players.Count-1)
         {
             _playerTurn = 0;
         }
         _currentPlayer = _players[_playerTurn].GetComponent<PlayerInfo>();
+        _currentPlayer.playerOutline.SetActive(true);
 
     }
 

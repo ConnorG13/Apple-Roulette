@@ -12,7 +12,7 @@ public class PlayerInfo : MonoBehaviour
     private GameController gameController;
     public GameObject skull;
     public bool isAlive = true;
-
+    public GameObject playerOutline;
     void Awake()
     {
         gameController = GameObject.FindObjectOfType<GameController>();  
@@ -23,6 +23,7 @@ public class PlayerInfo : MonoBehaviour
         coins = 0;
         hearts = gameController._startingHearts;
         skull.SetActive(false);
+
     }
 
     void Update()
